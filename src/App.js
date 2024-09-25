@@ -1,13 +1,15 @@
-import './App.css'
-import Header from './components/Header'
-function App() {
-  const data = 'febs eriy'
-  return (
-    <div>
-   <h1 style={{backgroundColor:"red"}}>Hello world</h1> 
-   <Header data={data}/>
 
-   <p > Its a sample description {data}</p>
+function App() {
+  let count=0;
+  function addCount(){
+    count = count+1
+    console.log(count)
+  }
+  
+  return (
+    <div className="App">
+      <button onClick={addCount}>Add</button>
+   <h1>Counter: {count}</h1>
    <br/>
    </div>
    
