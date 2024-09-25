@@ -1,15 +1,30 @@
+import {useState} from 'react'
+import Employee from './Employee'
 
 function App() {
-  let count=0;
-  function addCount(){
-    count = count+1
+  const [count,setCount] =useState(0)
+     
+
+  const addCount=()=>{
+    setCount(count+1)
     console.log(count)
   }
+
+  let emp = [{name:'sam',age:22},
+    {name:'steve',age:24},
+    {name:'Man',age:33}
+  ]
   
   return (
     <div className="App">
       <button onClick={addCount}>Add</button>
-   <h1>Counter: {count}</h1>
+      {
+        emp.map((obj,index)=>
+             (
+              <Employee key={index} {...obj}/>
+            )
+        )
+      }
    <br/>
    </div>
    
